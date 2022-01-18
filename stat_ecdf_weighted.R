@@ -82,7 +82,7 @@ StatEcdf <- ggproto("StatEcdf", Stat,
                       if (pad) {
                         x <- c(-Inf, x, Inf)
                       }
-                      y <- ewcdf(data$x, weights=data$weight/sum(data$weight))(x)
+                      y <- spatstat::ewcdf(data$x, weights = data$weight/sum(data$weight))(x)
                       
                       data.frame(x = x, y = y)
                     },
